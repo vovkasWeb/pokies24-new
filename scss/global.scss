@@ -1,0 +1,92 @@
+@font-face {
+font-family: "Roboto";
+    src: url("/fonts/Roboto-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("/fonts/Arial-MT.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("/fonts/Arial-BoldMT.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+$VPur100: #1C1330;
+$VPur75: #594B88;
+$VPur50: #7B6CAC;
+$VPur25: #AFA4D4;
+$VPur0: #D4CBF2;
+$VWhite: #FFFFFF;
+
+$VPur100Orange100:#D66A25;
+$VOrange50: #FFAF43;
+$VOrange0: #F0B464;
+$VOrangeGrad: linear-gradient(180deg, #D66A25 0%, #F0B464 100%);
+
+$VGreen: #98FF4A;
+$VLBlue: #4AEDFF;
+$VBlue: #5C4AFF;
+$VPurple: #9B4AFF;
+$VPink: #FF4AC3;
+$VRed: #FF4A4D;
+
+$Font400:(
+    font-style: normal,
+    font-weight: 400,
+    line-height: 120%,
+    letter-spacing: 0%,
+);
+$Font700:(
+    font-style: normal,
+    font-weight: 700,
+    line-height: 120%,
+    letter-spacing: 0%,
+);
+$Font900:(
+    font-style: normal,
+    font-weight: 900,
+    line-height: 120%,
+    letter-spacing: 0%,
+);
+@mixin font($map) {
+  font-style: map-get($map, font-style);
+  font-weight: map-get($map, font-weight);
+  line-height: map-get($map, line-height);
+  letter-spacing: map-get($map, letter-spacing);
+}
+$V68: 68px;
+$V42: 42px;
+$V26: 26px;
+$V16: 16px;
+$V10: 10px;
+
+$Famaly1: "Roboto", sans-serif;
+$Famaly2: "Arial", sans-serif;

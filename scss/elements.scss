@@ -1,0 +1,24 @@
+.btn-orange{
+        padding: 0 15px;
+        font-family: $Famaly1;
+        display: block;
+        @include font($Font700);
+        height: 100%;
+        color: $VWhite;
+        font-size: $V16;
+        border-radius: 20px;
+        box-shadow: 0px 0.5px 1.5px 0px rgba(22, 19, 47, 0.25);
+        background: linear-gradient(180deg, $VPur100Orange100 0%, $VOrange0 100%);
+        box-shadow: 0px 0px 3px 0px rgba(255, 232, 202, 1) inset,
+         0px 0px 10px 0px rgba(255, 166, 47, 1),
+         0px 0px 2px 0px rgba(255, 166, 47, 0.25);
+        transition: all 0.3s ease;
+        &:hover{
+            box-shadow: 0px 0px 3px 0px rgba(255, 232, 202, 1) inset,
+            0px 0px 2px 0px rgba(255, 166, 47, 0.25);
+        }
+        &.active{
+           background: linear-gradient(180deg, $VPur100 0%, $VPur50 100%);
+           box-shadow: none;
+        }
+}

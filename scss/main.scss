@@ -1,0 +1,15 @@
+@import "global";
+@import "elements";
+@import "style";
+
+body{
+    background: linear-gradient(180deg, #1C1330 14.42%, #281948 41.83%, #211241 68.27%, #1C1330 100%);
+
+}
+.container {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+    padding: 0 15px;
+}
+

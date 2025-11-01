@@ -61,20 +61,21 @@ $VRed: #FF4A4D;
 $Font400:(
     font-style: normal,
     font-weight: 400,
-    line-height: 120%,
+    line-height: 100%,
     letter-spacing: 0%,
 );
 $Font700:(
     font-style: normal,
     font-weight: 700,
-    line-height: 120%,
+    line-height: 100%,
     letter-spacing: 0%,
 );
 $Font900:(
     font-style: normal,
     font-weight: 900,
-    line-height: 120%,
+    line-height: 100%,
     letter-spacing: 0%,
+    
 );
 @mixin font($map) {
   font-style: map-get($map, font-style);

@@ -19,6 +19,8 @@
         }
         &.active{
            background: linear-gradient(180deg, $VPur100 0%, $VPur50 100%);
-           box-shadow: none;
+            box-shadow: 0px 0px 3px 0px $VPur100 inset,
+            0px 0px 10px 0px $VPur100,
+            0px 0px 4px 0px $VPur50;
         }
 }

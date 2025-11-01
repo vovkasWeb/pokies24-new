@@ -39,7 +39,7 @@
   display: block;
   font-style: normal;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 100%;
   letter-spacing: 0%;
   height: 100%;
   color: #FFFFFF;
@@ -55,19 +55,25 @@
 }
 .btn-orange.active {
   background: linear-gradient(180deg, #1C1330 0%, #7B6CAC 100%);
-  box-shadow: none;
+  box-shadow: 0px 0px 3px 0px #1C1330 inset, 0px 0px 10px 0px #1C1330, 0px 0px 4px 0px #7B6CAC;
 }
 
 .main-home {
   background: url("../resurs/img/bg-home-main.png") no-repeat center/cover;
 }
 .main-home__wrapper {
-  padding-top: 15px;
+  padding: 15px 0;
   min-height: 100vh;
   max-width: 1040px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-home__top {
+  text-align: center;
 }
 .main-home__header {
   display: flex;
@@ -81,6 +87,7 @@
   -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   box-shadow: inset 0 -8px 12px rgba(0, 0, 0, 0.1), inset 0 8px 12px rgba(255, 255, 255, 0.15), inset 0 1px 4px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
 }
 .main-home__logo {
   display: block;
@@ -95,7 +102,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%;
+  line-height: 100%;
   letter-spacing: 0%;
   color: #AFA4D4;
   font-size: 16px;
@@ -136,6 +143,62 @@
   border-radius: 20px;
   width: 100%;
   height: 100%;
+}
+.main-home__title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  font-size: 68px;
+  text-transform: uppercase;
+}
+.main-home__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  font-size: 42px;
+}
+.main-home__name {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-size: 68px;
+  background: linear-gradient(180deg, #D66A25 0%, #F0B464 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main-home__bottom {
+  text-align: center;
+}
+.main-home__button {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-size: 26px;
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 25px 30px;
+  margin-bottom: 15px;
+}
+.main-home__text {
+  max-width: 785px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #D4CBF2;
+  font-size: 16px;
 }
 
 body {

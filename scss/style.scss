@@ -31,7 +31,7 @@
         inset 0 1px 4px rgba(255, 255, 255, 0.15), 
         0 2px 6px rgba(0, 0, 0, 0.25),
         0 0 2px rgba(0, 0, 0, 0.4);
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     &__logo{
         display: block;
@@ -129,5 +129,6 @@
         @include font($Font400);
         color: $VPur0;
         font-size: $V16;
+        line-height: $lineHeight1;
     }
 }

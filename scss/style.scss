@@ -68,8 +68,7 @@
         padding-top: 30px;
         position: absolute;
     }
-    &__sublist{
-        
+    &__sublist, &__secondList{
         visibility: hidden;
         opacity: 0;
         max-width: 300px;  // например, максимум
@@ -80,6 +79,7 @@
        background: rgba(41, 32, 84, 1);
         box-sizing: border-box;
         white-space: nowrap;
+        color: $VPur25;
         backdrop-filter: blur(10px);
         box-shadow: 0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 
         0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset,
@@ -89,17 +89,32 @@
          transition: all .4s ease-in-out;
         &-item{
             transition: all .3s ease-in-out;
-            fill: $VPur0;
+            fill: $VPur25;
+            position: relative;
             & svg{
                 margin-left: 15px;
+                
             }
             &:hover{
                 color: $VPur0;
+                fill: $VPur0;
+            }
+            &:hover .main-home__secondList{
+                visibility: visible;
+                opacity: 1;
             }
         }
         &-item + &-item{
             margin-top: 15px;
         }
+    }
+    &__secondList{
+    }
+    &__triangle-second{
+        position: absolute;
+        padding-left: 15px;
+        left: 100%;
+        top: -30px;
     }
     &__btn{
         max-width: 145px;

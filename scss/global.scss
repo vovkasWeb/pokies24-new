@@ -40,6 +40,7 @@ font-family: "Roboto";
 
 
 $VPur100: #1C1330;
+$VPur95: rgba(41, 32, 84, 1);
 $VPur75: #594B88;
 $VPur50: #7B6CAC;
 $VPur25: #AFA4D4;
@@ -94,3 +95,9 @@ $Famaly1: "Roboto", sans-serif;
 $Famaly2: "Arial", sans-serif;
 
 $lineHeight1: 120%;
+
+$BoxShadow1:  0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 
+        0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset,
+        0px 1px 4px 0px rgb(130, 106, 253) inset,
+        0px 2px 6px 0px rgba(0, 0, 0, 0.25),
+        0px 0px 2px 0px rgba(0, 0, 0, 0.4);

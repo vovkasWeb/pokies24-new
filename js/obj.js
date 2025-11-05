@@ -179,3 +179,127 @@ export const sliderGamesMain = {
    'crash':[globalGames[14],globalGames[15],globalGames[16],globalGames[17],globalGames[18]]
 }
 
+export const pagas={
+	'online-casinos':{
+		name: 'Online Casinos',
+		url: './online-casinos',
+		pages:{
+			'best-online-casinos':{
+				name: 'Best online casinos',
+				url: './',
+				pages:{}
+			},
+			'mobile-apps-casino':{
+				name: 'Mobile apps casino',
+				url: './',
+				pages:{}
+			},
+			'trending':{
+				name: 'Trending',
+				url: './',
+				pages:{}
+			},
+			'best-live-casinos':{
+				name: 'Best live Casinos',
+				url: './',
+				pages:{}
+			},
+			'payment-methods':{
+				name: 'Payment Methods',
+				url: './',
+				pages:{
+                    'credit-cards':{
+				        name: 'Credit cards',
+				        url: './',
+				        pages:{}
+			        },
+                    'crypto':{
+				        name: 'Crypto',
+				        url: './',
+				        pages:{}
+			        },
+                    'neosurf':{
+				        name: 'Neosurf',
+				        url: './',
+				        pages:{}
+			        },
+                    'neosurf':{
+				        name: 'PayId',
+				        url: './',
+				        pages:{}
+			        },
+                }
+			},
+		}
+	},
+	'free-pokies':{
+		name: 'Free Pokies',
+		url: './free-pokies',
+		pages:{
+			'all':{
+				name: 'Free Pokies',
+				url: './',
+				pages:{}
+			},
+			'crash':{
+				name: 'Crash',
+				url: './',
+				pages:{}
+			},
+			'trending':{
+				name: 'Trending',
+				url: './',
+				pages:{}
+			},
+			'live-dealer':{
+				name: 'Live dealer',
+				url: './',
+				pages:{}
+			},
+			'table-games':{
+				name: 'Table games',
+				url: './',
+				pages:{}
+			},
+		}
+	},
+    'casino-guides':{
+        name: 'Casino Guides',
+		url: './casino-guides',
+		pages:{ 
+            'online-blackjack-australia':{
+                name: 'Online Blackjack Australia',
+                url: './',
+                pages:{}
+            }
+        }
+    },
+    'contact':{
+		name: 'CONTACT',
+		url: './contact',
+		pages:{}
+	},
+	'disclaimer':{
+		name: 'Disclaimer',
+		url: './disclaimer',
+		pages:{}
+	},
+    'tc':{
+		name: 'T&C',
+		url: './tc',
+		pages:{}
+	},
+    'privacy-policy':{
+		name: 'Privacy Policy',
+		url: './privacy-policy',
+		pages:{}
+	},
+    'responsible-gambling':{
+		name: 'Responsible gambling',
+		url: './responsible-gambling',
+		pages:{}
+	},
+	
+	
+	
+}

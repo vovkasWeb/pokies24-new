@@ -2,11 +2,12 @@
     background: url('../resurs/img/bg-home-main.png') no-repeat center / cover;
     @media (max-width: 750px) {
         background: url('../resurs/img/bg-home-main-mobile.png') no-repeat center / cover;
+         background: url('../resurs/img/bg.png') no-repeat center / cover;
     }
     &__wrapper{
         padding: 15px 0;
-        min-height: 100vh;   /* fallback для старых браузеров */
-        min-height: 100dvh;  /* динамическая высота для мобилок */
+        min-height: 100vh;   
+        min-height: 100dvh;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -39,8 +40,8 @@
             display: none;
             @media (max-width: 750px) {
                 display: block;
-                margin-top: 15px;
-                margin-bottom: 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
         }
     }
@@ -187,6 +188,9 @@
         & span{
             color: $VOrange0;
         }
+        @media (max-width: 750px) {
+            font-size: $V26;
+        }
     }
     
     &__bottom{
@@ -212,10 +216,97 @@
         color: $VPur0;
         font-size: $V16;
         line-height: $lineHeight1;
+        margin-bottom: 20px;
+    }
+    &__mobileMenu{
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        background: $VPur95;
+        box-shadow: $BoxShadow1;
+        padding: 0 15px;
+        border-radius: 20px;
+        display: none;
+        @media (max-width: 750px) {
+            display: flex;
+        }
+        
+        z-index: 5;
+        &-link{
+            font-family: $Famaly1;
+            @include font($Font400);
+            color: $VPur25;
+            font-size: $V16;
+            transition: all .3s ease-in-out;
+            max-width: 85px;
+            &.active {
+                color: $VOrange0;
+            }
+            &:hover{
+                color: $VPur0;
+            }
+        }
+        // &-btn{
+        //     display: none;
+        // }
     }
 }
 
-
-@media (max-width: 750px) {
-
+.popup-mobileMenu{
+    position: absolute;
+    top:15px;
+    left: 15px;
+    width: calc(100dvw - 30px);
+    height: calc(100dvh - 105px);
+    background: $VPur95;
+    box-shadow: $BoxShadow1;
+    padding: 30px;
+    border-radius: 20px;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+    display: flex;
+    flex-direction: column;
+    &.active{
+        visibility: visible;
+        opacity: 1;
+    }
+    &__link{
+        font-family: $Famaly1;
+        @include font($Font400);
+        color: $VPur25;
+        fill:$VPur25; 
+        font-size: $V16;
+        transition: all .3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 370px;
+        width: 100%;
+        padding: 20px 0;
+        margin: 0 auto;
+        &.active {
+            color: $VOrange0;
+        }
+        &:hover{
+            color: $VPur0;
+            fill: $VPur0;
+        }
+    }
+    &__back {
+        font-family: $Famaly1;
+        color: $VPur50;
+        @include font($Font400);
+        font-size: 18px;
+        max-width: 370px;
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 }

@@ -207,6 +207,9 @@
         @media (max-width: 750px) {
             width: 100%;
         }
+        @media(max-width: 390px){
+            font-size: $V20;
+        }
     }
     &__text{
         max-width: 785px;
@@ -217,6 +220,9 @@
         font-size: $V16;
         line-height: $lineHeight1;
         margin-bottom: 20px;
+         @media(max-width: 390px){
+            font-size: $V14;
+        }
     }
     &__mobileMenu{
         height: 60px;

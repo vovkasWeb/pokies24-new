@@ -281,6 +281,11 @@
     width: 100%;
   }
 }
+@media (max-width: 390px) {
+  .main-home__button {
+    font-size: 20px;
+  }
+}
 .main-home__text {
   max-width: 785px;
   margin: 0 auto;
@@ -293,6 +298,11 @@
   font-size: 16px;
   line-height: 120%;
   margin-bottom: 20px;
+}
+@media (max-width: 390px) {
+  .main-home__text {
+    font-size: 14px;
+  }
 }
 .main-home__mobileMenu {
   height: 60px;

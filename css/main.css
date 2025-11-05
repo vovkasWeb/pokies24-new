@@ -70,6 +70,7 @@
 .main-home__wrapper {
   padding: 15px 0;
   min-height: 100vh;
+  min-height: 100dvh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -423,7 +424,7 @@ body {
 }
 
 html {
-  background: rgb(41, 32, 84);
+  background: #1C1330;
 }
 
 /*# sourceMappingURL=main.css.map */

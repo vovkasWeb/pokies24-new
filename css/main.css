@@ -63,7 +63,6 @@
 }
 @media (max-width: 750px) {
   .main-home {
-    background: url("../resurs/img/bg-home-main-mobile.png") no-repeat center/cover;
     background: url("../resurs/img/bg.png") no-repeat center/cover;
   }
 }
@@ -108,7 +107,6 @@
 @media (max-width: 750px) {
   .main-home__logo-mobile {
     display: block;
-    margin-top: 10px;
     margin-bottom: 10px;
   }
 }
@@ -258,7 +256,7 @@
 }
 @media (max-width: 750px) {
   .main-home__title {
-    font-size: 26px;
+    font-size: clamp(16px, 5.5vw, 26px);
   }
 }
 .main-home__bottom {
@@ -295,14 +293,9 @@
   line-height: 100%;
   letter-spacing: 0%;
   color: #D4CBF2;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 120%;
-  margin-bottom: 20px;
-}
-@media (max-width: 390px) {
-  .main-home__text {
-    font-size: 14px;
-  }
+  margin-bottom: 15px;
 }
 .main-home__mobileMenu {
   height: 60px;

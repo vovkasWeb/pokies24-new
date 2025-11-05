@@ -1,8 +1,7 @@
 .main-home{
     background: url('../resurs/img/bg-home-main.png') no-repeat center / cover;
     @media (max-width: 750px) {
-        background: url('../resurs/img/bg-home-main-mobile.png') no-repeat center / cover;
-         background: url('../resurs/img/bg.png') no-repeat center / cover;
+        background: url('../resurs/img/bg.png') no-repeat center / cover;
     }
     &__wrapper{
         padding: 15px 0;
@@ -40,7 +39,6 @@
             display: none;
             @media (max-width: 750px) {
                 display: block;
-                margin-top: 10px;
                 margin-bottom: 10px;
             }
         }
@@ -189,7 +187,7 @@
             color: $VOrange0;
         }
         @media (max-width: 750px) {
-            font-size: $V26;
+          font-size:clamp($V16, 5.5vw, $V26);
         }
     }
     
@@ -217,12 +215,9 @@
         font-family: $Famaly2;
         @include font($Font400);
         color: $VPur0;
-        font-size: $V16;
+        font-size: $V14;
         line-height: $lineHeight1;
-        margin-bottom: 20px;
-         @media(max-width: 390px){
-            font-size: $V14;
-        }
+        margin-bottom: 15px;
     }
     &__mobileMenu{
         height: 60px;

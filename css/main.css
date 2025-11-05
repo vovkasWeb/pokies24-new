@@ -63,7 +63,8 @@
 }
 @media (max-width: 750px) {
   .main-home {
-    background: url("../resurs/img/bg.png") no-repeat center/cover;
+    background: url("../resurs/img/bg.png") no-repeat top/cover;
+    background-size: contain;
   }
 }
 .main-home__wrapper {
@@ -419,6 +420,10 @@ body {
   max-width: 1040px;
   width: 100%;
   margin: 0 auto;
+}
+
+html {
+  background: rgb(41, 32, 84);
 }
 
 /*# sourceMappingURL=main.css.map */

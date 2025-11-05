@@ -64,7 +64,6 @@
 @media (max-width: 750px) {
   .main-home {
     background: url("../resurs/img/bg.png") no-repeat top/cover;
-    background-size: contain;
   }
 }
 .main-home__wrapper {

@@ -2,7 +2,6 @@
     background: url('../resurs/img/bg-home-main.png') no-repeat center / cover;
     @media (max-width: 750px) {
         background: url('../resurs/img/bg.png') no-repeat top / cover;
-        background-size: contain;
     }
     &__wrapper{
         padding: 15px 0;

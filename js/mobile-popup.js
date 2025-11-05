@@ -1,22 +1,22 @@
 import { pagas } from './obj.js'; // если у тебя отдельный файл с объектом
 
 const menuBtn = document.querySelector('.main-home__mobileMenu-btn');
-const menuPopup = document.querySelector('.popup-mobileMenu');
+const mobileMenuPopup = document.querySelector('.popup-mobileMenu');
 
 // стек истории для возврата назад
 let historyStack = [];
 
 // показать меню
 menuBtn.addEventListener('click', () => {
-  menuPopup.classList.toggle('active');
-  if (menuPopup.classList.contains('active')) {
+  mobileMenuPopup.classList.toggle('active');
+  if (mobileMenuPopup.classList.contains('active')) {
     renderMenu(pagas); // первый уровень
   }
 });
 
 // рендер меню по объекту
 function renderMenu(obj, parentTitle = null) {
-  menuPopup.innerHTML = ''; // очистить меню
+  mobileMenuPopup.innerHTML = ''; // очистить меню
 
   // если это подменю — добавить кнопку "Назад"
   if (parentTitle) {
@@ -31,7 +31,7 @@ function renderMenu(obj, parentTitle = null) {
       const prev = historyStack.pop();
       renderMenu(prev.obj, prev.title);
     });
-    menuPopup.appendChild(backBtn);
+    mobileMenuPopup.appendChild(backBtn);
   }
 
   // список пунктов
@@ -58,6 +58,14 @@ function renderMenu(obj, parentTitle = null) {
       });
     }
 
-    menuPopup.appendChild(link);
+    mobileMenuPopup.appendChild(link);
   });
 }
+
+window.addEventListener('resize', () => {
+  const width = window.innerWidth;
+
+  if (width > 750 && mobileMenuPopup.classList.contains('active')) {
+    mobileMenuPopup.classList.remove('active');
+  }
+});

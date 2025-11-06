@@ -31,9 +31,3 @@ window.addEventListener('resize', () => {
   clearTimeout(window._resizeTimeout);
   window._resizeTimeout = setTimeout(updateActiveBg, 150);
 });
-
-
-
-
-
-

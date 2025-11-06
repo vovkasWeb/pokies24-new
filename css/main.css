@@ -207,6 +207,8 @@
   padding-left: 15px;
   left: 100%;
   top: -30px;
+  max-width: 300px;
+  overflow: hidden;
 }
 .main-home__btn {
   max-width: 145px;
@@ -228,6 +230,7 @@
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
+  overflow: hidden;
 }
 .main-home__popup.active {
   visibility: visible;
@@ -337,7 +340,8 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  width: calc(100dvw - 30px);
+  width: calc(100% - 30px);
+  max-width: calc(100vw - 30px);
   height: calc(100dvh - 105px);
   background: rgb(41, 32, 84);
   box-shadow: 0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset, 0px 1px 4px 0px rgb(130, 106, 253) inset, 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
@@ -396,9 +400,64 @@
   transition: 0.3s;
 }
 
-body {
-  background: linear-gradient(180deg, #1C1330 14.42%, #281948 41.83%, #211241 68.27%, #1C1330 100%);
+.slider-games__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   position: relative;
+  overflow: hidden;
+}
+.slider-games__line-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 16px;
+  background: rgba(76, 75, 113, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset, 0px 1px 4px 0px rgb(130, 106, 253) inset, 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.slider-games__line-btn {
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 15px 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #AFA4D4;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  outline: none;
+}
+.slider-games__line-btn:focus {
+  outline: none;
+}
+.slider-games__line-btn:focus-visible {
+  outline: none;
+}
+.slider-games__line-btn.active {
+  color: #FFFFFF;
+}
+
+body {
+  background: linear-gradient(180deg, #1c1330 0%, #1c1330 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+html {
+  background: #1C1330;
+  overflow-x: hidden;
 }
 
 .container {
@@ -420,10 +479,6 @@ body {
   max-width: 1040px;
   width: 100%;
   margin: 0 auto;
-}
-
-html {
-  background: #1C1330;
 }
 
 /*# sourceMappingURL=main.css.map */

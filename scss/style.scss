@@ -105,7 +105,7 @@
         top:100%;
         border-radius: 20px;
         text-align: left;
-       background: $VPur95;
+        background: $VPur95;
         box-sizing: border-box;
         white-space: nowrap;
         color: $VPur25;
@@ -142,6 +142,8 @@
         padding-left: 15px;
         left: 100%;
         top: -30px;
+        max-width: 300px;
+        overflow: hidden;
     }
     &__btn{
         max-width: 145px;
@@ -163,6 +165,7 @@
         transition: all .3s ease-in-out;
         visibility: hidden;
         opacity: 0;
+        overflow: hidden;
         &.active{
             visibility: visible;
             opacity: 1;
@@ -259,7 +262,8 @@
     position: absolute;
     top:15px;
     left: 15px;
-    width: calc(100dvw - 30px);
+    width: calc(100% - 30px);
+    max-width: calc(100vw - 30px);
     height: calc(100dvh - 105px);
     background: $VPur95;
     box-shadow: $BoxShadow1;

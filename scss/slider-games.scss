@@ -1,16 +1,54 @@
-.slider-games{
-    &__wrapper{
+.slider-games {
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden; // ✅ убираем горизонтальный скролл
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 16px;
+      background: rgba(76, 75, 113, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: $BoxShadow1;
+      transition: all 0.35s ease;
+      pointer-events: none;
+      z-index: 0;
     }
-    &__line{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &-btn{
-        background: rgba(76, 75, 113, 0.2); 
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 16px;
-        box-shadow: $BoxShadow1;
-        }
+
+    &-btn {
+      position: relative;
+      z-index: 1;
+      border-radius: 16px;
+      padding: 15px 30px;
+      @include font($Font400);
+      color: $VPur25;
+      font-size: $V26;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      // ✅ убираем синее свечение (outline при фокусе)
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+
+      // ✅ чтобы не появлялся скролл из-за фокуса в некоторых браузерах
+      &:focus-visible {
+        outline: none;
+      }
+
+      &.active {
+        color: $VWhite;
+      }
     }
+  }
 }

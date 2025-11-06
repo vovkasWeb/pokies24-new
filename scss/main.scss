@@ -1,29 +1,31 @@
-@import "global";
-@import "elements";
-@import "style";
-@import "slider-games";
+@import 'global';
+@import 'elements';
+@import 'style';
+@import 'slider-games';
 
-body{
-   background: #1C1330;
+body {
+	background: linear-gradient(180deg, #1c1330 0%, #1c1330 100%);
 	position: relative;
+	overflow-x: hidden;
+}
+html {
+	background: $VPur100;
+	overflow-x: hidden;
 }
 .container {
 	position: relative;
 	max-width: 1440px;
 	margin: 0 auto;
-    padding: 0 15px;
+	padding: 0 15px;
 }
-.section-top{
+.section-top {
 	padding-top: 100px;
 }
-.section{
+.section {
 	padding: 50px 0;
 }
-.wrapper{
+.wrapper {
 	max-width: 1040px;
 	width: 100%;
 	margin: 0 auto;
-}
-html{
-	background: $VPur100;
 }

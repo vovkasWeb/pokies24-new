@@ -1,0 +1,16 @@
+.slider-games{
+    &__wrapper{
+    }
+    &__line{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-btn{
+            background: rgba(76, 75, 113, 0.2); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: $BoxShadow1;
+        }
+    }
+}

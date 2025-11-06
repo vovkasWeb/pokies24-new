@@ -5,14 +5,30 @@
             padding-right: 0;
          }
     }
+    &__sliderbtn{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    }
   &__line {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
+    margin: 0  10px 15px 10px;
+     transition: transform 0.4s ease;
+    will-change: transform;
+    padding-bottom: 5px;
+    gap: clamp(10px,2vw,20px);
+    &::-webkit-scrollbar {
+            height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $VPur75;
+        border-radius: 4px;
+    }
 
     &-bg {
       position: absolute;
@@ -24,12 +40,13 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       box-shadow: $BoxShadow1;
-      transition: all 0.35s ease;
+        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
       pointer-events: none;
       z-index: 0;
     }
 
     &-btn {
+    flex: 0 0 auto;
       position: relative;
       z-index: 1;
       border-radius: 16px;
@@ -41,9 +58,9 @@
       border: none;
       cursor: pointer;
       transition: color 0.3s ease;
-        -webkit-tap-highlight-color: transparent; /* убирает синий фон при тапе */
-        outline: none; /* убирает контур фокуса */
-        user-select: none; /* запрещает выделение текста при нажатии */
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+        user-select: none; 
       &:focus {
         outline: none;
       }

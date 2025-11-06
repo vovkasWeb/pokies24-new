@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto-Regular.woff2") format("woff2");
@@ -125,7 +124,6 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   gap: clamp(0px, 0.5vw, 10px);
 }
 .main-home__list::-webkit-scrollbar {
@@ -407,14 +405,30 @@
     padding-right: 0;
   }
 }
+.slider-games__sliderbtn {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
 .slider-games__line {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+  margin: 0 10px 15px 10px;
+  transition: transform 0.4s ease;
+  will-change: transform;
+  padding-bottom: 5px;
+  gap: clamp(10px, 2vw, 20px);
+}
+.slider-games__line::-webkit-scrollbar {
+  height: 4px;
+}
+.slider-games__line::-webkit-scrollbar-thumb {
+  background: #594B88;
+  border-radius: 4px;
 }
 .slider-games__line-bg {
   position: absolute;
@@ -426,11 +440,12 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset, 0px 1px 4px 0px rgb(130, 106, 253) inset, 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
-  transition: all 0.35s ease;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
   pointer-events: none;
   z-index: 0;
 }
 .slider-games__line-btn {
+  flex: 0 0 auto;
   position: relative;
   z-index: 1;
   border-radius: 16px;
@@ -445,9 +460,9 @@
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
-  -webkit-tap-highlight-color: transparent; /* убирает синий фон при тапе */
-  outline: none; /* убирает контур фокуса */
-  user-select: none; /* запрещает выделение текста при нажатии */
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
 }
 .slider-games__line-btn:focus {
   outline: none;

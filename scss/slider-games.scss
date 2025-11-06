@@ -1,11 +1,18 @@
 .slider-games {
+    .container{
+         @media (max-width: 1000px) {
+            padding-left: 0;
+            padding-right: 0;
+         }
+    }
   &__line {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     position: relative;
-    overflow: hidden; // ✅ убираем горизонтальный скролл
+    overflow: hidden;
+    margin-bottom: 20px;
 
     &-bg {
       position: absolute;
@@ -34,9 +41,9 @@
       border: none;
       cursor: pointer;
       transition: color 0.3s ease;
-
-      // ✅ убираем синее свечение (outline при фокусе)
-      outline: none;
+        -webkit-tap-highlight-color: transparent; /* убирает синий фон при тапе */
+        outline: none; /* убирает контур фокуса */
+        user-select: none; /* запрещает выделение текста при нажатии */
       &:focus {
         outline: none;
       }
@@ -51,4 +58,66 @@
       }
     }
   }
+}
+.slider-games__slider{
+  position: relative;
+}
+.slider-games__content {
+  overflow: hidden;
+}
+.slider-games__content-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+.slider-games__content-item{
+   flex: 0 0 20%;
+  padding: 0 10px;
+  @media (max-width: 1000px) {
+    flex: 0 0 25%;
+  }
+  @media (max-width: 750px) {
+    flex: 0 0 33.33%;
+  }
+  @media (max-width: 550px) {
+    flex: 0 0 50%;
+  }
+    & img{
+        width: 100%;
+        max-height: 235px;
+          height: 100%;
+        border-radius: 10px;
+    }
+}
+.slider-games__btn {
+    @media (max-width: 1040px) {
+        display: none !important;
+        
+    }
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(76, 75, 113, 0.2);
+backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+      box-shadow: $BoxShadow1;
+  border: none;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.slider-games__btn-left {
+  left: -10px;
+  
+}
+
+.slider-games__btn-right {
+  right: -10px;
 }

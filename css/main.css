@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto-Regular.woff2") format("woff2");
@@ -400,6 +401,12 @@
   transition: 0.3s;
 }
 
+@media (max-width: 1000px) {
+  .slider-games .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .slider-games__line {
   display: flex;
   align-items: center;
@@ -407,6 +414,7 @@
   gap: 20px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .slider-games__line-bg {
   position: absolute;
@@ -437,7 +445,9 @@
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
-  outline: none;
+  -webkit-tap-highlight-color: transparent; /* убирает синий фон при тапе */
+  outline: none; /* убирает контур фокуса */
+  user-select: none; /* запрещает выделение текста при нажатии */
 }
 .slider-games__line-btn:focus {
   outline: none;
@@ -447,6 +457,79 @@
 }
 .slider-games__line-btn.active {
   color: #FFFFFF;
+}
+
+.slider-games__slider {
+  position: relative;
+}
+
+.slider-games__content {
+  overflow: hidden;
+}
+
+.slider-games__content-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.slider-games__content-item {
+  flex: 0 0 20%;
+  padding: 0 10px;
+}
+@media (max-width: 1000px) {
+  .slider-games__content-item {
+    flex: 0 0 25%;
+  }
+}
+@media (max-width: 750px) {
+  .slider-games__content-item {
+    flex: 0 0 33.33%;
+  }
+}
+@media (max-width: 550px) {
+  .slider-games__content-item {
+    flex: 0 0 50%;
+  }
+}
+.slider-games__content-item img {
+  width: 100%;
+  max-height: 235px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.slider-games__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(76, 75, 113, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px -8px 12px 0px rgba(0, 0, 0, 0.1) inset, 0px 8px 12px 0px rgba(145, 123, 255, 0.3) inset, 0px 1px 4px 0px rgb(130, 106, 253) inset, 0px 2px 6px 0px rgba(0, 0, 0, 0.25), 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border: none;
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1040px) {
+  .slider-games__btn {
+    display: none !important;
+  }
+}
+
+.slider-games__btn-left {
+  left: -10px;
+}
+
+.slider-games__btn-right {
+  right: -10px;
 }
 
 body {

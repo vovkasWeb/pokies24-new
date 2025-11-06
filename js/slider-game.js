@@ -10,6 +10,11 @@ function moveBg(target) {
   bg.style.transform = `translate(${rect.left - parentRect.left}px, ${rect.top - parentRect.top}px)`;
 }
 
+function updateActiveBg() {
+  const activeBtn = document.querySelector('.slider-games__line-btn.active');
+  if (activeBtn) moveBg(activeBtn);
+}
+
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelector('.slider-games__line-btn.active')?.classList.remove('active');
@@ -18,8 +23,17 @@ buttons.forEach(btn => {
   });
 });
 
-// при загрузке сразу поставить фон под активную кнопку
-window.addEventListener('load', () => {
-  const activeBtn = document.querySelector('.slider-games__line-btn.active');
-  if (activeBtn) moveBg(activeBtn);
+// при загрузке
+window.addEventListener('load', updateActiveBg);
+
+// при ресайзе — с небольшой задержкой для производительности
+window.addEventListener('resize', () => {
+  clearTimeout(window._resizeTimeout);
+  window._resizeTimeout = setTimeout(updateActiveBg, 150);
 });
+
+
+
+
+
+

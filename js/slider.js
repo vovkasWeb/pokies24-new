@@ -7,7 +7,6 @@ let slides, slideWidth, totalSlides, position;
 let isAnimating = false;
 let startX = 0;
 let isTouching = false;
-let animationTimeout;
 
 function initSlider() {
   sliderWrapper.innerHTML = '';
@@ -33,29 +32,27 @@ function initSlider() {
       sliderWrapper.style.transform = `translateX(${-slideWidth * position + peekOffset}px)`;
     }
 
-    function unlockAnimation() {
-      isAnimating = false;
-      clearTimeout(animationTimeout);
-    }
-
     function scrollRight() {
       if (isAnimating) return;
       isAnimating = true;
       position++;
       updateTransform(true);
 
-      // Страховка на случай, если transitionend не сработает
-      animationTimeout = setTimeout(unlockAnimation, 600);
+      const timeout = setTimeout(() => {
+        // страховка на случай, если transitionend не сработает
+        isAnimating = false;
+      }, 500);
 
-      const onEnd = () => {
+      const tr = () => {
+        clearTimeout(timeout);
         if (position >= totalSlides - Math.floor(totalSlides / 3)) {
           position = Math.floor(totalSlides / 3);
           updateTransform(false);
         }
-        unlockAnimation();
-        sliderWrapper.removeEventListener('transitionend', onEnd);
+        isAnimating = false;
+        sliderWrapper.removeEventListener('transitionend', tr);
       };
-      sliderWrapper.addEventListener('transitionend', onEnd);
+      sliderWrapper.addEventListener('transitionend', tr);
     }
 
     function scrollLeft() {
@@ -64,20 +61,23 @@ function initSlider() {
       position--;
       updateTransform(true);
 
-      animationTimeout = setTimeout(unlockAnimation, 600);
+      const timeout = setTimeout(() => {
+        isAnimating = false;
+      }, 500);
 
-      const onEnd = () => {
+      const tl = () => {
+        clearTimeout(timeout);
         if (position <= Math.floor(totalSlides / 3) - 1) {
           position = totalSlides - Math.floor(totalSlides / 3) - 1;
           updateTransform(false);
         }
-        unlockAnimation();
-        sliderWrapper.removeEventListener('transitionend', onEnd);
+        isAnimating = false;
+        sliderWrapper.removeEventListener('transitionend', tl);
       };
-      sliderWrapper.addEventListener('transitionend', onEnd);
+      sliderWrapper.addEventListener('transitionend', tl);
     }
 
-    // === Скрытие кнопок при полном заполнении ===
+    // === Показываем или скрываем кнопки ===
     const viewportWidth = sliderWrapper.clientWidth;
     const originalsCount = originalSlides.length;
     if (viewportWidth >= originalsCount * slideWidth) {
@@ -91,16 +91,16 @@ function initSlider() {
       btnRight.style.display = 'flex';
     }
 
-    // === Управление ===
+    // === Навигация ===
     btnRight.onclick = scrollRight;
     btnLeft.onclick = scrollLeft;
 
+    // === Свайпы ===
     sliderWrapper.ontouchstart = (e) => {
       if (isAnimating) return;
       startX = e.touches[0].clientX;
       isTouching = true;
     };
-
     sliderWrapper.ontouchend = (e) => {
       if (!isTouching) return;
       isTouching = false;

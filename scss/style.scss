@@ -201,6 +201,7 @@
         @include font($Font700);
         font-size: $V26;
         color: $VWhite;
+          text-transform: uppercase;
         display: inline-block;
         padding: 25px 30px;
         margin-bottom: 15px;
@@ -217,9 +218,12 @@
         font-family: $Famaly2;
         @include font($Font400);
         color: $VPur0;
-        font-size: $V14;
+        font-size: $V16;
         line-height: $lineHeight1;
         margin-bottom: 15px;
+         @media (max-width: 750px) {
+            font-size: $V14;
+        }
     }
     &__mobileMenu{
         height: 60px;

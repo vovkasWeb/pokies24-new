@@ -2,11 +2,12 @@ const sliderWrapper = document.querySelector('.slider-games__content-wrapper');
 const btnLeft = document.querySelector('.slider-games__btn-left');
 const btnRight = document.querySelector('.slider-games__btn-right');
 
-let originalSlides = Array.from(sliderWrapper.children).map(s => s.cloneNode(true)); 
+let originalSlides = Array.from(sliderWrapper.children).map(s => s.cloneNode(true));
 let slides, slideWidth, totalSlides, position;
 let isAnimating = false;
 let startX = 0;
 let isTouching = false;
+let nextAction = null; // 👈 очередь действий
 
 function initSlider() {
   sliderWrapper.innerHTML = '';
@@ -32,47 +33,52 @@ function initSlider() {
       sliderWrapper.style.transform = `translateX(${-slideWidth * position + peekOffset}px)`;
     }
 
+    function finishAnimation() {
+      isAnimating = false;
+      // если пользователь пытался листнуть ещё раз — выполняем следующее действие
+      if (nextAction) {
+        const action = nextAction;
+        nextAction = null;
+        action();
+      }
+    }
+
     function scrollRight() {
-      if (isAnimating) return;
+      if (isAnimating) {
+        nextAction = scrollRight;
+        return;
+      }
       isAnimating = true;
       position++;
       updateTransform(true);
 
-      const timeout = setTimeout(() => {
-        // страховка на случай, если transitionend не сработает
-        isAnimating = false;
-      }, 500);
-
       const tr = () => {
-        clearTimeout(timeout);
         if (position >= totalSlides - Math.floor(totalSlides / 3)) {
           position = Math.floor(totalSlides / 3);
           updateTransform(false);
         }
-        isAnimating = false;
         sliderWrapper.removeEventListener('transitionend', tr);
+        finishAnimation();
       };
       sliderWrapper.addEventListener('transitionend', tr);
     }
 
     function scrollLeft() {
-      if (isAnimating) return;
+      if (isAnimating) {
+        nextAction = scrollLeft;
+        return;
+      }
       isAnimating = true;
       position--;
       updateTransform(true);
 
-      const timeout = setTimeout(() => {
-        isAnimating = false;
-      }, 500);
-
       const tl = () => {
-        clearTimeout(timeout);
         if (position <= Math.floor(totalSlides / 3) - 1) {
           position = totalSlides - Math.floor(totalSlides / 3) - 1;
           updateTransform(false);
         }
-        isAnimating = false;
         sliderWrapper.removeEventListener('transitionend', tl);
+        finishAnimation();
       };
       sliderWrapper.addEventListener('transitionend', tl);
     }
